@@ -2,7 +2,7 @@ import { STATES } from 'mongoose';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { FaUser } from 'react-icons/fa';
-import { useSelector, useDispatch, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { register, reset } from '../features/auth/authSlice';
@@ -24,7 +24,7 @@ function Register() {
             navigate('/');
         }
 
-        dispatchEvent(reset);
+        dispatch(reset);
     }, [user, isError, isSuccess, message, navigate, dispatch]);
 
     const [formData, setFormData] = useState({
@@ -91,5 +91,13 @@ function Register() {
         </>
     );
 };
+
+// function Register() {
+//     return (
+//         <div>
+//             <h1>Register</h1>
+//         </div>
+//     );
+// }
 
 export default Register;
