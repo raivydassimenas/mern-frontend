@@ -9,15 +9,6 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
 
-  const clearCacheData = () => {
-    caches.keys().then((names) => {
-      names.forEach((name) => {
-        caches.delete(name);
-      });
-    });
-    alert('Complete Cache Cleared')
-  };
-
   return (
     <>
       <Router>
@@ -30,8 +21,6 @@ function App() {
           </Routes>
         </div>
       </Router>
-      <button onClick={() => clearCacheData()} >
-        Clear Cache Data</button>
       <ToastContainer />
     </>
   );
