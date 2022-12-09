@@ -82,7 +82,7 @@ function Dashboard() {
     }
 
     if (!user) {
-      navigate('/login')
+      navigate('/login');
     }
 
    dispatch(getGoals())

@@ -63,14 +63,17 @@ const createGoal = async (goalData, token) => {
 }
 
 // Get user goals
-const getGoals = async (token) => {
+const getGoals = async (user, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-    },
+    }
+    // data: {
+    //   user
+    // }
   }
 
-  const response = await axios.get(API_URL, config)
+  const response = await axios.get(API_URL, config);
 
   return response.data
 }
